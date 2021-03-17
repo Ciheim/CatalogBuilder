@@ -2,9 +2,9 @@
 
 The CatalogBuilder API will collect building blocks necessary to build a data catalog which can then be ingested in climate analysis scripts/workflow, leveraging the use of intake-esm and xarray.
 
-Tested on posix file system and S3 at this time. 
+-Tested on posix file system and S3 at this time. 
 
-Two ways To use intakebuilder
+Two ways To use CatalogBuilder
 
 [A]
 1.setup environment using environment_intake.yml
