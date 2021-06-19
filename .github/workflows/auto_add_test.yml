@@ -14,6 +14,10 @@ on:
   workflow_dispatch:
 jobs:
   run:
+    name: gen_intake_s3.py
+      run: |
+        $CONDA/envs/intake/bin/pytest 
+        $CONDA/envs/intake/bin/python3 gen_intake_s3.py
     name: Add a text file
     runs-on: ubuntu-latest
 
