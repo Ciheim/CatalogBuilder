@@ -28,7 +28,8 @@ jobs:
        with:
             path: './pathToRepo/'
 
-       # You can make whatever type of change to the repo...
+     - name: create_test_file
+     # You can make whatever type of change to the repo...
        run: echo "123" > ./pathToRepo/file.txt
 
        # ...and then use the action as you would normally do, but providing the path to the repo
