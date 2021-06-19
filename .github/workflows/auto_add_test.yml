@@ -14,26 +14,27 @@ on:
   workflow_dispatch:
 jobs:
   run:
-    name: gen_intake_s3.py
-      run:
-        $CONDA/envs/intake/bin/pytest 
-        $CONDA/envs/intake/bin/python3 gen_intake_s3.py
     name: Add a text file
     runs-on: ubuntu-latest
 
     steps:
+      name: gen_intake_s3.py
+        run:
+        $CONDA/envs/intake/bin/pytest 
+        $CONDA/envs/intake/bin/python3 gen_intake_s3.py
       # If you need to, you can check out your repo to a different location
-      - uses: actions/checkout@v2
-        with:
-          path: './pathToRepo/'
+      name: addfiletorepo
+        - uses: actions/checkout@v2
+         with:
+            path: './pathToRepo/'
 
-      # You can make whatever type of change to the repo...
-      - run: echo "123" > ./pathToRepo/file.txt
+       # You can make whatever type of change to the repo...
+        - run: echo "123" > ./pathToRepo/file.txt
 
-      # ...and then use the action as you would normally do, but providing the path to the repo
-      - uses: EndBug/add-and-commit@v7
-        with:
-          message: 'Add the very useful text file'
-          add: '*.txt --force'
-          cwd: './pathToRepo/'
+       # ...and then use the action as you would normally do, but providing the path to the repo
+        - uses: EndBug/add-and-commit@v7
+          with:
+           message: 'Add the very useful text file'
+           add: '*.txt --force'
+           cwd: './pathToRepo/'
 
