@@ -19,7 +19,7 @@ jobs:
 
     steps:
      - name: gen_intake_s3.py
-        - run
+       run:
           $CONDA/envs/intake/bin/pytest 
           $CONDA/envs/intake/bin/python3 gen_intake_s3.py
       # If you need to, you can check out your repo to a different location
